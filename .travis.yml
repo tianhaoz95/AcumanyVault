@@ -5,8 +5,8 @@ node_js:
 jobs:
   include:
     - stage: install dependencies
-      script: cd ./client/acumany-vault-web && npm install
-    - stage: unit test
-      script: npm test
-    - stage: production build
-      script: npm run build
+      script: |
+        cd ./client/acumany-vault-web
+        npm install
+        npm test
+        npm run build
