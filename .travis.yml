@@ -6,7 +6,7 @@ jobs:
   include:
     - stage: install dependencies
       script: |
-        cd ./client/acumany-vault-web
+        cd ./client/vault-web
         npm install
         npm test
         npm run build
