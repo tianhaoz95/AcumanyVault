@@ -10,3 +10,4 @@ jobs:
         npm install
         npm test
         npm run build
+        firebase deploy --only hosting:acumany-vault --token "$FIREBASE_TOKEN"
