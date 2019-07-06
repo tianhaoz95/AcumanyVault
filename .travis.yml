@@ -6,7 +6,7 @@ jobs:
   include:
     - stage: install dependencies
       script: |
-        cd ./client/vault-web
+        cd ./ui/vault-web
         npm install
         npm test
         npm run build
