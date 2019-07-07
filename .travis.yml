@@ -6,7 +6,7 @@ before_install:
   npm install -g firebase-tools
 jobs:
   include:
-    - stage: install dependencies
+    - stage: Deploy desktop vault website to Firebase
       script: |
         cd ./ui/vault-web
         npm install
