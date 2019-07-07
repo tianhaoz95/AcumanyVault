@@ -2,6 +2,16 @@ dist: xenial
 language: node_js
 node_js:
   - "10"
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++6
+      - fonts-droid
+cache:
+  directories:
+    - $HOME/.pub-cache
 before_install:
   - npm install -g firebase-tools
   - git clone https://github.com/flutter/flutter.git -b beta
