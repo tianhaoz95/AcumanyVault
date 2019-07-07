@@ -8,7 +8,7 @@ jobs:
   include:
     - stage: Deploy desktop vault website to Firebase
       script: |
-        cd ./ui/vault-web
+        cd ./ui/vault-desktop-web
         npm install
         npm test
         npm run build
