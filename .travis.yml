@@ -1,26 +1,32 @@
 dist: xenial
-language: node_js
-node_js:
-  - "10"
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - libstdc++6
-cache:
-  directories:
-    - $HOME/.pub-cache
-before_install:
-  - npm install -g firebase-tools
-  - git clone https://github.com/flutter/flutter.git -b beta
-  - ./flutter/bin/flutter doctor
 jobs:
   include:
     - stage: Deploy desktop vault website to Firebase
+      language: node_js
+      node_js:
+        - "10"
+      before_install:
+        - npm install -g firebase-tools
       script: |
         cd ./ui/vault-desktop-web
         npm install
         npm test
         npm run build
         firebase deploy --only hosting:acumany-vault --token "$FIREBASE_TOKEN"
+    - stage: Building mobile app on Android
+      language: android
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - libstdc++6
+            - lib32stdc++6
+            - libc6:i386
+            - libncurses5:i386
+            - libstdc++6:i386
+            - lib32z1
+            - libbz2-1.0:i386
+      before_install:
+        - git clone https://github.com/flutter/flutter.git -b beta
+        - ./flutter/bin/flutter doctor
