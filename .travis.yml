@@ -41,6 +41,7 @@ matrix:
             - lib32z1
             - libbz2-1.0:i386
       before_install:
+        - ls $ANDROID_HOME
         - yes | $ANDROID_HOME/sdk/tools/bin/sdkmanager "platforms;android-28"
         - yes | $ANDROID_HOME/sdk/tools/bin/sdkmanager "build-tools;28.0.3"
         - git clone https://github.com/flutter/flutter.git -b beta
