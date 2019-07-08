@@ -1,6 +1,6 @@
 matrix:
   include:
-    - stage: Deploy desktop vault website to Firebase
+    - stage: Deploy desktop Vault website to Firebase
       language: node_js
       dist: xenial
       node_js:
@@ -13,7 +13,7 @@ matrix:
         npm test
         npm run build
         firebase deploy --only hosting:acumany-vault --token "$FIREBASE_TOKEN"
-    - stage: Building mobile app on Android
+    - stage: Build Android Vault App
       language: android
       jdk: oraclejdk9
       android:
