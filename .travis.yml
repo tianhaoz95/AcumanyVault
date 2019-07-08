@@ -33,6 +33,6 @@ matrix:
             - libbz2-1.0:i386
       before_install:
         - git clone https://github.com/flutter/flutter.git -b beta
-        - ./flutter/bin/flutter doctor
+        - ./flutter/bin/flutter doctor -v
       script: |
         echo "Not implemented"
