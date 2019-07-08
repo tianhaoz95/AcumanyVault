@@ -15,7 +15,7 @@ matrix:
         firebase deploy --only hosting:acumany-vault --token "$FIREBASE_TOKEN"
     - stage: Build Android Vault App
       language: android
-      jdk: oraclejdk9
+      jdk: oraclejdk8
       sudo: true
       android:
         components:
@@ -44,8 +44,8 @@ matrix:
             - libbz2-1.0:i386
       before_install:
         - ls $ANDROID_HOME/tools/bin
-        - yes | $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28"
-        - yes | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3"
+        - yes | sudo $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28"
+        - yes | sudo $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3"
         - git clone https://github.com/flutter/flutter.git -b beta
         - echo $ANDROID_HOME
         - ./flutter/bin/flutter doctor -v
