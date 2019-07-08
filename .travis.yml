@@ -1,8 +1,8 @@
-dist: xenial
 matrix:
   include:
     - stage: Deploy desktop vault website to Firebase
       language: node_js
+      dist: xenial
       node_js:
         - "10"
       before_install:
