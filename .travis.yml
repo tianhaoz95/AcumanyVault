@@ -1,13 +1,11 @@
 matrix:
   allow_failures:
-    - env:
-      - ALLOW_TASK_FAILURE=yes
+    env: ALLOW_TASK_FAILURE=yes
   include:
     - stage: Deploy desktop Vault website to Firebase
       language: node_js
       dist: xenial
-      - env:
-        - ALLOW_TASK_FAILURE=yes
+      env: ALLOW_TASK_FAILURE=yes
       node_js:
         - "10"
       before_install:
@@ -21,8 +19,7 @@ matrix:
     - stage: Build Android Vault App
       language: android
       jdk: oraclejdk8
-      - env:
-        - ALLOW_TASK_FAILURE=yes
+      env: ALLOW_TASK_FAILURE=yes
       sudo: true
       android:
         components:
@@ -61,7 +58,6 @@ matrix:
         echo "Not implemented"
     - stage: Build iOS Vault App
       language: objective-c
-      - env:
-        - ALLOW_TASK_FAILURE=yes
+      env: ALLOW_TASK_FAILURE=yes
       script: |
         echo "Not implemented"
