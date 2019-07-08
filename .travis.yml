@@ -16,6 +16,7 @@ matrix:
     - stage: Build Android Vault App
       language: android
       jdk: oraclejdk9
+      sudo: true
       android:
         components:
           - android-28
