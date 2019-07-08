@@ -47,6 +47,7 @@ matrix:
         - sudo $ANDROID_HOME/tools/bin/sdkmanager list
         - yes | sudo $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28"
         - yes | sudo $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3"
+        - yes | sudo $ANDROID_HOME/tools/bin/sdkmanager --update
         - git clone https://github.com/flutter/flutter.git -b beta
         - echo $ANDROID_HOME
         - ./flutter/bin/flutter doctor --android-licenses
