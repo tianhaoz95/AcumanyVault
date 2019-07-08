@@ -1,5 +1,5 @@
 dist: xenial
-jobs:
+matrix:
   include:
     - stage: Deploy desktop vault website to Firebase
       language: node_js
