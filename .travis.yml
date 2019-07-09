@@ -59,7 +59,7 @@ matrix:
         ../../flutter/bin/flutter test
     - stage: Build iOS Vault App
       osx_image: xcode11
-      language: objective-c
+      language: swift
       env: ALLOW_TASK_FAILURE=yes
       before_install:
         - brew update
