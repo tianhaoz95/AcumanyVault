@@ -85,4 +85,5 @@ matrix:
         - git clone https://github.com/flutter/flutter.git -b beta
         - ./flutter/bin/flutter doctor -v
       script: |
-        echo "Not implemented"
+        cd ./ui/vault_mobile
+        ../../flutter/bin/flutter test
