@@ -58,6 +58,7 @@ matrix:
         cd ./ui/vault_mobile
         ../../flutter/bin/flutter test
     - stage: Build iOS Vault App
+      osx_image: xcode11
       language: objective-c
       env: ALLOW_TASK_FAILURE=yes
       before_install:
