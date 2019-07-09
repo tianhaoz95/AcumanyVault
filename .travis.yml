@@ -82,8 +82,6 @@ matrix:
         - brew install --HEAD libimobiledevice
         - brew install ideviceinstaller
         - brew install ios-deploy
-        - brew install cocoapods
-        - brew upgrade cocoapods
         - pod setup
         - git clone https://github.com/flutter/flutter.git -b beta
         - ./flutter/bin/flutter doctor -v
