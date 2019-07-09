@@ -16,6 +16,20 @@ matrix:
         npm test
         npm run build
         firebase deploy --only hosting:acumany-vault --token "$FIREBASE_TOKEN"
+    - stage: Deploy Firebase backend microservices
+      language: node_js
+      dist: xenial
+      env: ALLOW_TASK_FAILURE=yes
+      node_js:
+        - "10"
+      before_install:
+        - npm install -g firebase-tools
+      script: |
+        cd ./server/cloud_funcs
+        cd ./functions
+        npm install
+        cd ..
+        firebase deploy --only functions --token "$FIREBASE_TOKEN"
     - stage: Build Android Vault App
       language: android
       jdk: oraclejdk8
@@ -68,6 +82,7 @@ matrix:
         - brew install --HEAD libimobiledevice
         - brew install ideviceinstaller
         - brew install ios-deploy
+        - brew install cocoapods
         - brew upgrade cocoapods
         - pod setup
         - git clone https://github.com/flutter/flutter.git -b beta
