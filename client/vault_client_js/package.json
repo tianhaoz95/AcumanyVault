@@ -1,0 +1,11 @@
+{
+  "name": "vault_client_js",
+  "version": "1.0.0",
+  "description": "Javascript client for the Vault app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo NOT IMPLEMENTED"
+  },
+  "author": "Jackson Zhou",
+  "license": "ISC"
+}

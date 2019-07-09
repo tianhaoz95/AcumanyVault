@@ -30,6 +30,15 @@ matrix:
         npm install
         cd ..
         firebase deploy --only functions --token "$FIREBASE_TOKEN"
+    - stage: Deploy Javascript Vault client
+      language: node_js
+      dist: xenial
+      env: ALLOW_TASK_FAILURE=yes
+      node_js:
+        - "10"
+      script: |
+        cd ./client/vault_client_js
+        npm install
     - stage: Build Android Vault App
       language: android
       jdk: oraclejdk8
