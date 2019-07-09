@@ -59,5 +59,8 @@ matrix:
     - stage: Build iOS Vault App
       language: objective-c
       env: ALLOW_TASK_FAILURE=yes
+      before_install:
+        - git clone https://github.com/flutter/flutter.git -b beta
+        - ./flutter/bin/flutter doctor -v
       script: |
         echo "Not implemented"
