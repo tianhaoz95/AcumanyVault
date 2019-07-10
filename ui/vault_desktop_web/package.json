@@ -10,6 +10,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 3000",
+    "build-storybook": "build-storybook -c .storybook",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
