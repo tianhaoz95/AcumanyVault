@@ -1,11 +1,11 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-function Header() {
+function Header(props) {
     return (
         <React.Fragment>
             <Typography component="h4">
-                Property Editor
+                Property Editor {props.title}
             </Typography>
         </React.Fragment>
     );

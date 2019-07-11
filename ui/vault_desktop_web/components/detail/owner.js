@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Locker() {
+function Owner() {
     return (
         <React.Fragment>
-            Locker
+            Owner
         </React.Fragment>
     );
 }
 
-export default Locker;
+export default Owner;

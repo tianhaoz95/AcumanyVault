@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Locker from '.';
+import Brief from '.';
 
-storiesOf('Locker', module)
+storiesOf('Brief', module)
   .add('Top-level', () => (
-    <Locker />
+    <Brief />
   ));
