@@ -7,8 +7,6 @@ import Detail from 'components/detail';
 import Header from 'components/detail/header';
 import Secret from 'components/detail/secret';
 import Restriction from 'components/detail/restriction';
-import Owner from 'components/detail/owner';
-import UserList from 'components/detail/user_list';
 
 const stories = storiesOf('Detail', module);
 
@@ -39,10 +37,4 @@ stories
     <Restriction/>
 ), {
 notes: 'This is a list of people can view it',
-})
-.add('Owner', () => (
-    <Owner/>
-))
-.add('User List', () => (
-    <UserList list={["Tom", "Bob"]}/>
-));
+});
