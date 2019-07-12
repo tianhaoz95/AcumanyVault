@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import Chip from '@material-ui/core/Chip';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -12,38 +11,37 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     margin: theme.spacing(1),
-  },
-  chip: {
-    margin: theme.spacing(1),
   }
 }));
 
-function CanView(props) {
+function Restriction(props) {
     const classes = useStyles();
-    const can_view_list = [1,1,1,1,1];
-    const chip_list = can_view_list.map((idx) => (
-        <Chip
-            key={idx}
-            label="Basic Chip"
-            className={classes.chip}
-        />
-    ));
+    const [username, setUsername] = useState("");
+    const userList = ["Tom", "John", "Bob"];
+    function addUser() {
+      
+    }
+    function deleteUser(username) {
+      
+    }
     return (
         <React.Fragment>
             <TextField
                 className={classes.textField}
-                label="Key"
+                label="GitHub Username"
+                value={username}
                 variant="outlined"
+                onChange={(e) => {setUsername(e.target.value)}}
             />
             <Button
                 variant="contained"
                 className={classes.button}
+                onClick={() => {addUser()}}
                 >
                 Add
             </Button>
-            {chip_list}
         </React.Fragment>
     );
 }
 
-export default CanView;
+export default Restriction;

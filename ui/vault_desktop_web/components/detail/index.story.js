@@ -1,46 +1,48 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Detail from '.';
-import Header from './header';
-import Secret from './secret';
-import CanView from './can_view';
-import CanEdit from './can_edit';
-import Owner from './owner';
+import Detail from 'components/detail';
+import Header from 'components/detail/header';
+import Secret from 'components/detail/secret';
+import Restriction from 'components/detail/restriction';
+import Owner from 'components/detail/owner';
+import UserList from 'components/detail/user_list';
 
-const stories = storiesOf('Detail Page', module);
+const stories = storiesOf('Detail', module);
 
 stories.addDecorator(withKnobs);
 
 stories
-  .add('Top-level', () => (
-      <Detail/>
-  ))
-  .add('Header', () => {
-      const title = text('Title', 'MY_KEY');
-      return (
-          <Header 
-            title={title}
-            />
-      );
-  })
-  .add('Secret', () => {
-      return (
-          <Secret
-            onChange={action('secrete-content-update')}
-            />
-      );
-  })
-  .add('Can-view List', () => (
-      <CanView/>
-  ), {
-    notes: 'This is a list of people can view it',
-  })
-  .add('Can-edit List', () => (
-      <CanEdit/>
-  ))
-  .add('Owner', () => (
-      <Owner/>
-  ));
+.add('Top-level', () => (
+    <Detail/>
+))
+.add('Header', () => {
+    const title = text('Title', 'MY_KEY');
+    const edit = boolean('Edit Mode', true);
+    return (
+        <Header 
+        title={title}
+        edit={edit}
+        />
+    );
+})
+.add('Secret', () => {
+    return (
+        <Secret
+        onChange={action('secrete-content-update')}
+        />
+    );
+})
+.add('Restriction', () => (
+    <Restriction/>
+), {
+notes: 'This is a list of people can view it',
+})
+.add('Owner', () => (
+    <Owner/>
+))
+.add('User List', () => (
+    <UserList list={["Tom", "Bob"]}/>
+));

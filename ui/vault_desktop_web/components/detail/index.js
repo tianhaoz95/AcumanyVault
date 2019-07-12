@@ -1,20 +1,19 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 
-import Header from './header';
-import Secret from './secret';
-import CanView from './can_view';
-import CanEdit from './can_edit';
-import Owner from './owner';
+import Header from 'components/detail/header';
+import Secret from 'components/detail/secret';
+import Restriction from 'components/detail/restriction';
+import Owner from 'components/detail/owner';
 
 function Detail() {
     return (
         <Paper>
             <Header/>
-            <Secret/>
+            <Secret onChange={() => {}}/>
             <Owner/>
-            <CanView/>
-            <CanEdit/>
+            <Restriction/>
+            <Restriction/>
         </Paper>
     );
 }

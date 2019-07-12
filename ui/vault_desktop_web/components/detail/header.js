@@ -7,6 +7,11 @@ function Header(props) {
             <Typography component="h4">
                 Property Editor {props.title}
             </Typography>
+            {props.edit ? (
+                <Typography component="h4">
+                    (Edit Mode)
+                </Typography>
+            ) : (null)}
         </React.Fragment>
     );
 }

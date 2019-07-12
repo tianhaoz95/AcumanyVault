@@ -1,11 +1,11 @@
 import React from 'react';
 
-function CanEdit() {
+function SignUp() {
     return (
         <React.Fragment>
-            Edit
+            Sign up
         </React.Fragment>
     );
 }
 
-export default CanEdit;
+export default SignUp;
