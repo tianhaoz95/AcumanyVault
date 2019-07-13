@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Restriction(props) {
+function UserAdder(props) {
     const classes = useStyles();
     const [username, setUsername] = useState("");
     const userList = ["Tom", "John", "Bob"];
@@ -44,4 +44,4 @@ function Restriction(props) {
     );
 }
 
-export default Restriction;
+export default UserAdder;

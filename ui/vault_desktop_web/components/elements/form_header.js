@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-function Header(props) {
+function FormHeader(props) {
     return (
         <React.Fragment>
             <Typography component="h4">
@@ -16,4 +16,4 @@ function Header(props) {
     );
 }
 
-export default Header;
+export default FormHeader;
