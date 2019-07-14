@@ -1,0 +1,8 @@
+{
+    "standard.options": {
+        "envs": [
+            "jest"
+        ]
+    },
+    "editor.tabSize": 2
+}
