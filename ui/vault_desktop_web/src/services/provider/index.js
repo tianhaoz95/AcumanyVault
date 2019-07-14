@@ -5,12 +5,12 @@ function initProvider (providerName) {
     if (providerName === 'firebase') {
       try {
         initFirebase()
-        resolve()
+        resolve('Firebase initialized')
       } catch (err) {
         reject(err)
       }
     } else {
-      const err = new Error('Provider' + providerName + 'not supported')
+      const err = 'Provider' + providerName + 'not supported'
       reject(err)
     }
   })

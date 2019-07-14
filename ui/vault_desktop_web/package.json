@@ -14,8 +14,7 @@
     "build-storybook": "NODE_PATH=./src build-storybook -c .storybook",
     "start": "NODE_PATH=./src react-scripts start",
     "build": "NODE_PATH=./src react-scripts build",
-    "lint": "NODE_PATH=./src ./node_modules/.bin/standard --fix",
-    "test": "NODE_PATH=./src react-scripts test",
+    "test": "NODE_PATH=./src ./node_modules/.bin/standard --fix && NODE_PATH=./src react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

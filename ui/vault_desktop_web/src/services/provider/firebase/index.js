@@ -1,8 +1,9 @@
 import * as firebase from 'firebase/app'
 
-import fbConfig from 'services/provider/firebase/config'
+import getFbConfig from 'services/provider/firebase/config'
 
 function initFirebase () {
+  const fbConfig = getFbConfig()
   firebase.initializeApp(fbConfig)
 }
 
