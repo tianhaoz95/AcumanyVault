@@ -1,6 +1,12 @@
 tasks:
-  - init: cd ./ui/vault_desktop_web && npm install
-    command: npm start
+  - init: cd ./ui/vault_desktop_web
+    init: npm install
+  - command: cd ./ui/vault_desktop_web
+    command: npm start &
+  - command: cd ./ui/vault_desktop_web
+    command: npm run storybook &
 ports:
   - port: 3000
+    onOpen: open-preview
+  - port: 4000
     onOpen: open-preview
