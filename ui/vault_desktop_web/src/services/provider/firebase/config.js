@@ -8,40 +8,69 @@ function getFbConfig () {
     messagingSenderId: 'unknown',
     appId: 'unknown'
   }
-  if (process.env.FB_API_KEY) {
-    fbConfig.apiKey = process.env.FB_API_KEY
+  console.log(process.env)
+  if (process.env.REACT_APP_FB_API_KEY) {
+    fbConfig.apiKey = process.env.REACT_APP_FB_API_KEY
   } else {
-    throw new Error('FB_API_KEY not set')
+    if (process.env.STORYBOOK_FB_API_KEY) {
+      fbConfig.apiKey = process.env.STORYBOOK_FB_API_KEY
+    } else {
+      throw new Error('REACT_APP_FB_API_KEY/STORYBOOK_APP_FB_API_KEY not set')
+    }
   }
-  if (process.env.FB_AUTH_DOMAIN) {
-    fbConfig.authDomain = process.env.FB_AUTH_DOMAIN
+  if (process.env.REACT_APP_FB_AUTH_DOMAIN) {
+    fbConfig.authDomain = process.env.REACT_APP_FB_AUTH_DOMAIN
   } else {
-    throw new Error('FB_AUTH_DOMAIN not set')
+    if (process.env.STORYBOOK_FB_AUTH_DOMAIN) {
+      fbConfig.authDomain = process.env.STORYBOOK_FB_AUTH_DOMAIN
+    } else {
+      throw new Error('REACT_APP_FB_AUTH_DOMAIN/STORYBOOK_FB_AUTH_DOMAIN not set')
+    }
   }
-  if (process.env.FB_DB_URL) {
-    fbConfig.databaseURL = process.env.FB_DB_URL
+  if (process.env.REACT_APP_FB_DB_URL) {
+    fbConfig.databaseURL = process.env.REACT_APP_FB_DB_URL
   } else {
-    throw new Error('FB_DB_URL not set')
+    if (process.env.STORYBOOK_FB_DB_URL) {
+      fbConfig.databaseURL = process.env.STORYBOOK_FB_DB_URL
+    } else {
+      throw new Error('REACT_APP_FB_DB_URL not set')
+    }
   }
-  if (process.env.FB_PROJ_ID) {
-    fbConfig.projectId = process.env.FB_PROJ_ID
+  if (process.env.REACT_APP_FB_PROJ_ID) {
+    fbConfig.projectId = process.env.REACT_APP_FB_PROJ_ID
   } else {
-    throw new Error('FB_PROJ_ID not set')
+    if (process.env.STORYBOOK_FB_PROJ_ID) {
+      fbConfig.projectId = process.env.STORYBOOK_FB_PROJ_ID
+    } else {
+      throw new Error('REACT_APP_FB_PROJ_ID not set')
+    }
   }
-  if (process.env.FB_BUCKET) {
-    fbConfig.storageBucket = process.env.FB_BUCKET
+  if (process.env.REACT_APP_FB_BUCKET) {
+    fbConfig.storageBucket = process.env.REACT_APP_FB_BUCKET
   } else {
-    throw new Error('FB_BUCKET not set')
+    if (process.env.STORYBOOK_FB_BUCKET) {
+      fbConfig.storageBucket = process.env.STORYBOOK_FB_BUCKET
+    } else {
+      throw new Error('REACT_APP_FB_BUCKET not set')
+    }
   }
-  if (process.env.FB_MSG_ID) {
-    fbConfig.messagingSenderId = process.env.FB_MSG_ID
+  if (process.env.REACT_APP_FB_MSG_ID) {
+    fbConfig.messagingSenderId = process.env.REACT_APP_FB_MSG_ID
   } else {
-    throw new Error('FB_MSG_ID not set')
+    if (process.env.STORYBOOK_FB_MSG_ID) {
+      fbConfig.messagingSenderId = process.env.STORYBOOK_FB_MSG_ID
+    } else {
+      throw new Error('REACT_APP_FB_MSG_ID not set')
+    }
   }
-  if (process.env.FB_APP_ID) {
-    fbConfig.appId = process.env.FB_APP_ID
+  if (process.env.REACT_APP_FB_APP_ID) {
+    fbConfig.appId = process.env.REACT_APP_FB_APP_ID
   } else {
-    throw new Error('FB_APP_ID not set')
+    if (process.env.STORYBOOK_FB_APP_ID) {
+      fbConfig.appId = process.env.RSTORYBOOKFB_APP_ID
+    } else {
+      throw new Error('REACT_APP_FB_APP_ID not set')
+    }
   }
   return fbConfig
 }

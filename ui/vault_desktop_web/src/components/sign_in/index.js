@@ -1,11 +1,11 @@
 import React from 'react'
 
-function SignUp () {
+function SignIn () {
   return (
     <React.Fragment>
-            Sign up
+            Sign in
     </React.Fragment>
   )
 }
 
-export default SignUp
+export default SignIn
