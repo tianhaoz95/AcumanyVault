@@ -8,7 +8,6 @@ function getFbConfig () {
     messagingSenderId: 'unknown',
     appId: 'unknown'
   }
-  console.log(process.env)
   if (process.env.REACT_APP_FB_API_KEY) {
     fbConfig.apiKey = process.env.REACT_APP_FB_API_KEY
   } else {
