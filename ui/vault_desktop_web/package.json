@@ -47,6 +47,7 @@
     "@storybook/addon-knobs": "^5.1.7",
     "@storybook/addon-notes": "^5.1.7",
     "@storybook/react": "^5.1.7",
+    "@storybook/storybook-deployer": "^2.8.1",
     "standard": "^13.0.2"
   }
 }

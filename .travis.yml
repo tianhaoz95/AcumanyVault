@@ -2,10 +2,19 @@ matrix:
   allow_failures:
     env: ALLOW_TASK_FAILURE=yes
   include:
+    - stage: Desktop Vault website unit test
+      language: node_js
+      dist: xenial
+      node_js:
+        - "10"
+      script: |
+        cd ./ui/vault_desktop_web
+        npm install
+        npm test
     - stage: Deploy desktop Vault website to Firebase
       language: node_js
       dist: xenial
-      env: ALLOW_TASK_FAILURE=yes
+      if: branch = deploy AND fork = false
       node_js:
         - "10"
       before_install:
@@ -19,7 +28,7 @@ matrix:
     - stage: Deploy Firebase backend microservices
       language: node_js
       dist: xenial
-      env: ALLOW_TASK_FAILURE=yes
+      if: branch = deploy
       node_js:
         - "10"
       before_install:
@@ -33,6 +42,7 @@ matrix:
     - stage: Deploy Javascript Vault client
       language: node_js
       dist: xenial
+      if: branch = deploy AND fork = false
       env: ALLOW_TASK_FAILURE=yes
       node_js:
         - "10"
@@ -42,6 +52,7 @@ matrix:
     - stage: Build Android Vault App
       language: android
       jdk: oraclejdk8
+      if: branch = deploy AND fork = false
       env: ALLOW_TASK_FAILURE=yes
       sudo: true
       android:
@@ -83,6 +94,7 @@ matrix:
     - stage: Build iOS Vault App
       osx_image: xcode11
       language: swift
+      if: branch = deploy AND fork = false
       env: ALLOW_TASK_FAILURE=yes
       before_install:
         - brew update
