@@ -4,20 +4,28 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.2.0",
+    "firebase": "^6.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "storybook": "NODE_PATH=./ start-storybook -p 3000",
-    "build-storybook": "NODE_PATH=./ build-storybook -c .storybook",
-    "start": "NODE_PATH=./ react-scripts start",
-    "build": "NODE_PATH=./ react-scripts build",
-    "test": "NODE_PATH=./ react-scripts test",
+    "storybook": "NODE_PATH=./src start-storybook -p 3000",
+    "build-storybook": "NODE_PATH=./src build-storybook -c .storybook",
+    "start": "NODE_PATH=./src react-scripts start",
+    "build": "NODE_PATH=./src react-scripts build",
+    "lint": "NODE_PATH=./src ./node_modules/.bin/standard --fix",
+    "test": "NODE_PATH=./src react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "standard": {
+    "env": [ "jest" ],
+    "ignore": [
+      "src/serviceWorker.js"
+    ]
   },
   "browserslist": {
     "production": [
@@ -35,6 +43,7 @@
     "@storybook/addon-actions": "^5.1.7",
     "@storybook/addon-knobs": "^5.1.7",
     "@storybook/addon-notes": "^5.1.7",
-    "@storybook/react": "^5.1.7"
+    "@storybook/react": "^5.1.7",
+    "standard": "^13.0.2"
   }
 }
