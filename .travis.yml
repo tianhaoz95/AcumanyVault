@@ -34,6 +34,7 @@ matrix:
     - stage: Deploy Vault desktop website storybook to GitHub Pages
       language: node_js
       dist: xenial
+      if: branch = master AND fork = false
       node_js:
         - "10"
       script: |
@@ -48,12 +49,12 @@ matrix:
         cd ../../../pushdoc
         git init
         git checkout -b pushdoc
-        git remote add origin https://github.com/tianhaoz95/AcumanyVault.git
+        git remote add origin https://github.com/${TRAVIS_REPO_SLUG}.git
         git fetch
         git config user.name "Acumany Bot"
         git config user.email "bot@acumany.com"
         git add -A && git commit -m "Upload documentation [skip ci]"
-        git push --force https://${GITHUB_TOKEN}@github.com/tianhaoz95/AcumanyVault pushdoc:gh-pages
+        git push --force https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG} pushdoc:gh-pages
     - stage: Deploy desktop Vault website to Firebase
       language: node_js
       dist: xenial
