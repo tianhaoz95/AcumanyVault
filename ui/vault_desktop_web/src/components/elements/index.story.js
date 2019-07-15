@@ -9,6 +9,7 @@ import GitHubUserCard from 'components/elements/github_user_card'
 import FormHeader from 'components/elements/form_header'
 import SecretInput from 'components/elements/secret_input'
 import GitHubSignInButton from 'components/elements/github_sign_in_button'
+import GitHubAutocomplete from 'components/elements/github_autocomplete'
 
 const stories = storiesOf('Elements', module)
 
@@ -56,5 +57,10 @@ stories
   .add('GitHub Sign In Button', () => {
     return (
       <GitHubSignInButton />
+    )
+  })
+  .add('GitHub Autocomplete', () => {
+    return (
+      <GitHubAutocomplete />
     )
   })
