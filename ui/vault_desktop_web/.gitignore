@@ -2,6 +2,7 @@
 
 # Documentation
 /storybook-static
+/out*
 
 # Firebase
 /.firebase

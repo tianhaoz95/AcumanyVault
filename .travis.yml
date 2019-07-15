@@ -21,6 +21,26 @@ matrix:
         cd ./ui/vault_desktop_web
         npm install
         npm run build
+    - stage: Test Vault desktop website storybook compilation
+      language: node_js
+      dist: xenial
+      if: type = pull_request AND branch = master
+      node_js:
+        - "10"
+      script: |
+        cd ./ui/vault_desktop_web
+        npm install
+        npm run build-storybook
+    - stage: Deploy Vault desktop website storybook to GitHub Pages
+      language: node_js
+      dist: xenial
+      if: branch = master AND fork = false
+      node_js:
+        - "10"
+      script: |
+        cd ./ui/vault_desktop_web
+        npm install
+        npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
     - stage: Deploy desktop Vault website to Firebase
       language: node_js
       dist: xenial
