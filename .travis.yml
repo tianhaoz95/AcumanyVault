@@ -34,13 +34,24 @@ matrix:
     - stage: Deploy Vault desktop website storybook to GitHub Pages
       language: node_js
       dist: xenial
-      if: branch = master AND fork = false
       node_js:
         - "10"
       script: |
+        cd ..
+        mkdir pushdoc
+        cd ./AcumanyVault
+        cp ./misc/docs/README.md ../pushdoc
         cd ./ui/vault_desktop_web
         npm install
-        npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
+        npm run build-storybook
+        cp -r ./storybook-static ../../../pushdoc/vault_desktop_website_storybook_doc
+        cd ../../../pushdoc
+        git init
+        git checkout -b pushdoc
+        git config user.name "Acumany Bot"
+        git config user.email "bot@acumany.com"
+        git add -A && git commit -m "Upload documentation [skip ci]"
+        git push --force https://${GITHUB_TOKEN}@github.com/tianhaoz95/AcumanyVault pushdoc:gh-pages
     - stage: Deploy desktop Vault website to Firebase
       language: node_js
       dist: xenial
