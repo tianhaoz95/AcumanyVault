@@ -11,7 +11,7 @@ matrix:
         cd ./ui/vault_desktop_web
         npm install
         npm test
-    - stage: Compile desktop Vault website production build
+    - stage: Test Vault desktop website production build
       language: node_js
       dist: xenial
       if: type = pull_request AND branch = master
@@ -34,7 +34,7 @@ matrix:
     - stage: Deploy Vault desktop website storybook to GitHub Pages
       language: node_js
       dist: xenial
-      if: branch = master AND fork = false
+      if: branch = master AND fork = false AND type = push
       node_js:
         - "10"
       script: |
