@@ -48,6 +48,7 @@ matrix:
         cd ../../../pushdoc
         git init
         git checkout -b pushdoc
+        git remote add origin https://github.com/tianhaoz95/AcumanyVault.git
         git fetch
         git config user.name "Acumany Bot"
         git config user.email "bot@acumany.com"
