@@ -7,21 +7,26 @@
     "firebase": "^6.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "storybook": "NODE_PATH=./src start-storybook -p 3000",
+    "storybook": "NODE_PATH=./src start-storybook -p 4000",
     "build-storybook": "NODE_PATH=./src build-storybook -c .storybook",
-    "start": "NODE_PATH=./src react-scripts start",
+    "start": "NODE_PATH=./src react-scripts start -p 3000",
+    "deploy-storybook": "storybook-to-ghpages",
     "build": "NODE_PATH=./src react-scripts build",
     "test": "NODE_PATH=./src ./node_modules/.bin/standard --fix && NODE_PATH=./src react-scripts test",
+    "standard": "NODE_PATH=./src ./node_modules/.bin/standard --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "standard": {
-    "env": [ "jest" ],
+    "env": [
+      "jest"
+    ],
     "ignore": [
       "src/serviceWorker.js"
     ]
@@ -43,6 +48,7 @@
     "@storybook/addon-knobs": "^5.1.7",
     "@storybook/addon-notes": "^5.1.7",
     "@storybook/react": "^5.1.7",
+    "@storybook/storybook-deployer": "^2.8.1",
     "standard": "^13.0.2"
   }
 }

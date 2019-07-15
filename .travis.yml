@@ -2,10 +2,63 @@ matrix:
   allow_failures:
     env: ALLOW_TASK_FAILURE=yes
   include:
+    - stage: Desktop Vault website unit test
+      language: node_js
+      dist: xenial
+      node_js:
+        - "10"
+      script: |
+        cd ./ui/vault_desktop_web
+        npm install
+        npm test
+    - stage: Compile desktop Vault website production build
+      language: node_js
+      dist: xenial
+      if: type = pull_request AND branch = master
+      node_js:
+        - "10"
+      script: |
+        cd ./ui/vault_desktop_web
+        npm install
+        npm run build
+    - stage: Test Vault desktop website storybook compilation
+      language: node_js
+      dist: xenial
+      if: type = pull_request AND branch = master
+      node_js:
+        - "10"
+      script: |
+        cd ./ui/vault_desktop_web
+        npm install
+        npm run build-storybook
+    - stage: Deploy Vault desktop website storybook to GitHub Pages
+      language: node_js
+      dist: xenial
+      if: branch = master AND fork = false
+      node_js:
+        - "10"
+      script: |
+        cd ..
+        mkdir pushdoc
+        cd ./AcumanyVault
+        cp ./misc/docs/README.md ../pushdoc
+        cd ./ui/vault_desktop_web
+        npm install
+        npm run build-storybook
+        cp -r ./storybook-static ../../../pushdoc/vault_desktop_website_storybook_doc
+        cd ../../../pushdoc
+        git init
+        git checkout -b pushdoc
+        git remote add origin https://github.com/${TRAVIS_REPO_SLUG}.git
+        git fetch
+        git config user.name "Acumany Bot"
+        git config user.email "bot@acumany.com"
+        git add -A && git commit -m "Upload documentation [skip ci]"
+        git push --force https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG} pushdoc:gh-pages
     - stage: Deploy desktop Vault website to Firebase
       language: node_js
       dist: xenial
-      env: ALLOW_TASK_FAILURE=yes
+      if: branch = deploy AND fork = false
       node_js:
         - "10"
       before_install:
@@ -19,7 +72,7 @@ matrix:
     - stage: Deploy Firebase backend microservices
       language: node_js
       dist: xenial
-      env: ALLOW_TASK_FAILURE=yes
+      if: branch = deploy
       node_js:
         - "10"
       before_install:
@@ -33,6 +86,7 @@ matrix:
     - stage: Deploy Javascript Vault client
       language: node_js
       dist: xenial
+      if: branch = deploy AND fork = false
       env: ALLOW_TASK_FAILURE=yes
       node_js:
         - "10"
@@ -42,6 +96,7 @@ matrix:
     - stage: Build Android Vault App
       language: android
       jdk: oraclejdk8
+      if: branch = deploy AND fork = false
       env: ALLOW_TASK_FAILURE=yes
       sudo: true
       android:
@@ -83,6 +138,7 @@ matrix:
     - stage: Build iOS Vault App
       osx_image: xcode11
       language: swift
+      if: branch = deploy AND fork = false
       env: ALLOW_TASK_FAILURE=yes
       before_install:
         - brew update

@@ -8,6 +8,7 @@ import GitHubAvatar from 'components/elements/github_avatar'
 import GitHubUserCard from 'components/elements/github_user_card'
 import FormHeader from 'components/elements/form_header'
 import SecretInput from 'components/elements/secret_input'
+import GitHubSignInButton from 'components/elements/github_sign_in_button'
 
 const stories = storiesOf('Elements', module)
 
@@ -50,5 +51,10 @@ stories
       <SecretInput
         onChange={action('secrete-content-update')}
       />
+    )
+  })
+  .add('GitHub Sign In Button', () => {
+    return (
+      <GitHubSignInButton />
     )
   })
