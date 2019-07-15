@@ -48,6 +48,7 @@ matrix:
         cd ../../../pushdoc
         git init
         git checkout -b pushdoc
+        git fetch
         git config user.name "Acumany Bot"
         git config user.email "bot@acumany.com"
         git add -A && git commit -m "Upload documentation [skip ci]"
