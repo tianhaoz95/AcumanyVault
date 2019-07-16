@@ -1,11 +1,22 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
-function SignIn () {
+import GitHubSignInButton from 'components/elements/github_sign_in_button'
+import signInWithGitHub from 'services/authentication/sign_in'
+
+function SignIn (props) {
   return (
     <React.Fragment>
-            Sign in
+      <GitHubSignInButton
+        onClick={
+          async () => {
+            await signInWithGitHub('firebase')
+            props.history.push('/')
+          }
+        }
+      />
     </React.Fragment>
   )
 }
 
-export default SignIn
+export default withRouter(SignIn)

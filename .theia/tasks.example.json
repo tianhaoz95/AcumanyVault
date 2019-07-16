@@ -1,0 +1,67 @@
+{
+  "tasks": [
+    {
+      "label": "desktop website dev",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "start"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web",
+        "env": {
+          "REACT_APP_FB_API_KEY": "unknown",
+          "REACT_APP_FB_AUTH_DOMAIN": "unknown",
+          "REACT_APP_FB_DB_URL": "unknown",
+          "REACT_APP_FB_PROJ_ID": "unknown",
+          "REACT_APP_FB_BUCKET": "unknown",
+          "REACT_APP_FB_MSG_ID": "unknown",
+          "REACT_APP_FB_APP_ID": "unknown"
+        }
+      }
+    },
+    {
+      "label": "desktop website storybook",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "storybook"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web",
+        "env": {
+          "STORYBOOK_FB_API_KEY": "unknown",
+          "STORYBOOK_FB_AUTH_DOMAIN": "unknown",
+          "STORYBOOK_FB_DB_URL": "unknown",
+          "STORYBOOK_FB_PROJ_ID": "unknown",
+          "STORYBOOK_FB_BUCKET": "unknown",
+          "STORYBOOK_FB_MSG_ID": "unknown",
+          "STORYBOOK_FB_APP_ID": "unknown"
+        }
+      }
+    },
+    {
+      "label": "desktop website test watcher",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "test",
+        "--",
+        "--coverage"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web",
+        "env": {
+          "REACT_APP_FB_API_KEY": "unknown",
+          "REACT_APP_FB_AUTH_DOMAIN": "unknown",
+          "REACT_APP_FB_DB_URL": "unknown",
+          "REACT_APP_FB_PROJ_ID": "unknown",
+          "REACT_APP_FB_BUCKET": "unknown",
+          "REACT_APP_FB_MSG_ID": "unknown",
+          "REACT_APP_FB_APP_ID": "unknown"
+        }
+      }
+    }
+  ]
+}

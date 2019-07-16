@@ -10,6 +10,7 @@ function loadStories() {
   require('../src/components/sign_in/index.story.js');
   require('../src/components/elements/index.story.js');
   require('../src/components/account_page/index.story.js');
+  require('../src/components/project_page/index.story.js');
 }
 
 configure(loadStories, module);

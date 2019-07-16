@@ -1,6 +1,6 @@
 matrix:
   allow_failures:
-    env: ALLOW_TASK_FAILURE=yes
+    - env: ALLOW_TASK_FAILURE=yes
   include:
     - stage: Desktop Vault website unit test
       language: node_js
@@ -10,7 +10,7 @@ matrix:
       script: |
         cd ./ui/vault_desktop_web
         npm install
-        npm test
+        npm test -- --coverage
     - stage: Test Vault desktop website production build
       language: node_js
       dist: xenial
@@ -31,7 +31,7 @@ matrix:
         cd ./ui/vault_desktop_web
         npm install
         npm run build-storybook
-    - stage: Deploy Vault desktop website storybook to GitHub Pages
+    - stage: Deploy documentation to GitHub Pages
       language: node_js
       dist: xenial
       if: branch = master AND fork = false AND type = push
@@ -44,8 +44,10 @@ matrix:
         cp ./misc/docs/README.md ../pushdoc
         cd ./ui/vault_desktop_web
         npm install
+        npm test -- --coverage
         npm run build-storybook
         cp -r ./storybook-static ../../../pushdoc/vault_desktop_website_storybook_doc
+        cp -r ./coverage/lcov-report ../../../pushdoc/vault_desktop_website_coverage_report
         cd ../../../pushdoc
         git init
         git checkout -b pushdoc
@@ -136,8 +138,8 @@ matrix:
         cd ./ui/vault_mobile
         ../../flutter/bin/flutter test
     - stage: Build iOS Vault App
-      osx_image: xcode11
-      language: swift
+      osx_image: xcode10
+      language: objective-c
       if: branch = deploy AND fork = false
       env: ALLOW_TASK_FAILURE=yes
       before_install:
