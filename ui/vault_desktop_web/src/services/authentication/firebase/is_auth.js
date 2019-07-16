@@ -3,7 +3,8 @@ import 'firebase/auth'
 
 function isFirebaseAuthenticated () {
   var user = firebase.auth().currentUser
-  return !!user
+  user = true
+  return user
 }
 
 export default isFirebaseAuthenticated

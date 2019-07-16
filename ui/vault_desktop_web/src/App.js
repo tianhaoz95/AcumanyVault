@@ -10,6 +10,7 @@ import PrivateRoute from 'private_route'
 import vaultTheme from 'components/theme'
 import SignIn from 'components/sign_in'
 import AccountPage from 'components/account_page'
+import ProjectPage from 'components/project_page'
 
 function App () {
   return (
@@ -19,6 +20,7 @@ function App () {
           <Router>
             <Route path='/login' component={SignIn} />
             <PrivateRoute exact path='/' component={AccountPage} />
+            <PrivateRoute path='/project' component={ProjectPage} />
           </Router>
         </Container>
       </ThemeProvider>
