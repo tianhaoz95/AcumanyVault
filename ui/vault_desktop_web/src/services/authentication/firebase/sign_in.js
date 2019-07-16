@@ -4,6 +4,7 @@ import 'firebase/auth'
 function signInWithGitHub () {
   return new Promise((resolve, reject) => {
     var provider = new firebase.auth.GithubAuthProvider()
+    provider.addScope('repo')
     firebase.auth().signInWithPopup(provider)
       .then((result) => {
         var token = result.credential.accessToken

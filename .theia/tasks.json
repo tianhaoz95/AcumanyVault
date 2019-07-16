@@ -1,0 +1,38 @@
+{
+  "tasks": [
+    {
+      "label": "desktop website dev",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "start"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web"
+      }
+    },
+    {
+      "label": "desktop website storybook",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "run",
+        "storybook"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web"
+      }
+    },
+    {
+      "label": "desktop website test watcher",
+      "command": "npm",
+      "type": "shell",
+      "args": [
+        "test"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web"
+      }
+    }
+  ]
+}

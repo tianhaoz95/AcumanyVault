@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import UserAdder from 'components/elements/user_adder'
 
-test('App renders without crashing', () => {
+test('UserAdder renders without crashing', () => {
   const div = document.createElement('div')
-  ReactDOM.render(<App />, div)
+  ReactDOM.render(<UserAdder />, div)
   ReactDOM.unmountComponentAtNode(div)
 })
