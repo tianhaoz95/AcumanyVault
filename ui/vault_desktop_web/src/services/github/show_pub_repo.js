@@ -6,7 +6,6 @@ function readPubRepos (targetUsername) {
   return new Promise((resolve, reject) => {
     octokit.repos.listForUser({ username: targetUsername })
       .then((res) => {
-        console.log(res)
         resolve(res)
       })
       .catch((err) => {
