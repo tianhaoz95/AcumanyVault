@@ -3,6 +3,7 @@
 # Documentation
 /storybook-static
 /out*
+/coverage
 
 # Firebase
 /.firebase

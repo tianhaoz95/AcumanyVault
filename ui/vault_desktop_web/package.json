@@ -32,6 +32,9 @@
       "src/serviceWorker.js"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"]
+  },
   "browserslist": {
     "production": [
       ">0.2%",

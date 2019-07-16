@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core'
 
-const vaultTheme = createMuiTheme()
+const VaultTheme = createMuiTheme()
 
-export default vaultTheme
+export default VaultTheme

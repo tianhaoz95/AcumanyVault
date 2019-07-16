@@ -46,7 +46,9 @@
       "command": "npm",
       "type": "shell",
       "args": [
-        "test"
+        "test",
+        "--",
+        "--coverage"
       ],
       "options": {
         "cwd": "${workspaceFolder}/ui/vault_desktop_web",
