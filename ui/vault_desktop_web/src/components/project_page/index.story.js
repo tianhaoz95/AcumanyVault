@@ -7,5 +7,5 @@ const stories = storiesOf('Project Page', module)
 
 stories
   .add('Top-level', () => (
-    <ProjectPage />
+    <ProjectPage location={{ search: 'user=tianhaoz' }} />
   ))
