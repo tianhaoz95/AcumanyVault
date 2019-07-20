@@ -1,7 +1,7 @@
 tasks:
-  - init: cd ./ui/vault_desktop_web && npm install
+  - init: cd ./ui/vault_desktop_web && npm install && cd ../..
 ports:
   - port: 3000
-    onOpen: open-preview
+    onOpen: open-browser
   - port: 4000
-    onOpen: open-preview
+    onOpen: open-browser

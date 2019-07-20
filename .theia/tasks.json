@@ -1,0 +1,65 @@
+{
+  "tasks": [
+    {
+      "label": "Run dev desktop website",
+      "command": "npm",
+      "args": [
+        "start"
+      ],
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web",
+        "env": {
+          "REACT_APP_FB_API_KEY": "$FB_API_KEY",
+          "REACT_APP_FB_AUTH_DOMAIN": "$FB_AUTH_DOMAIN",
+          "REACT_APP_FB_DB_URL": "$FB_DB_URL",
+          "REACT_APP_FB_PROJ_ID": "$FB_PROJ_ID",
+          "REACT_APP_FB_BUCKET": "$FB_BUCKET",
+          "REACT_APP_FB_MSG_ID": "$FB_MSG_ID",
+          "REACT_APP_FB_APP_ID": "$FB_APP_ID"
+        }
+      }
+    },
+    {
+      "label": "Run desktop website storybook",
+      "command": "npm",
+      "args": [
+        "run",
+        "storybook"
+      ],
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web",
+        "env": {
+          "STORYBOOK_FB_API_KEY": "$FB_API_KEY",
+          "STORYBOOK_FB_AUTH_DOMAIN": "$FB_AUTH_DOMAIN",
+          "STORYBOOK_FB_DB_URL": "$FB_DB_URL",
+          "STORYBOOK_FB_PROJ_ID": "$FB_PROJ_ID",
+          "STORYBOOK_FB_BUCKET": "$FB_BUCKET",
+          "STORYBOOK_FB_MSG_ID": "$FB_MSG_ID",
+          "STORYBOOK_FB_APP_ID": "$FB_APP_ID"
+        }
+      }
+    },
+    {
+      "label": "Run desktop website test",
+      "command": "npm",
+      "args": [
+        "test"
+      ],
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web",
+        "env": {
+          "REACT_APP_FB_API_KEY": "$FB_API_KEY",
+          "REACT_APP_FB_AUTH_DOMAIN": "$FB_AUTH_DOMAIN",
+          "REACT_APP_FB_DB_URL": "$FB_DB_URL",
+          "REACT_APP_FB_PROJ_ID": "$FB_PROJ_ID",
+          "REACT_APP_FB_BUCKET": "$FB_BUCKET",
+          "REACT_APP_FB_MSG_ID": "$FB_MSG_ID",
+          "REACT_APP_FB_APP_ID": "$FB_APP_ID"
+        }
+      }
+    }
+  ]
+}
