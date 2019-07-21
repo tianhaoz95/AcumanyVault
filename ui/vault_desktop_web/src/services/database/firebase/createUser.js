@@ -23,8 +23,12 @@ function firebaseCreateUser (username) {
       github_username: username,
       watch_projects: []
     })
-      .then()
-      .catch()
+      .then((res) => {
+        resolve(res)
+      })
+      .catch((err) => {
+        reject(err)
+      })
     return userRef
   })
 }

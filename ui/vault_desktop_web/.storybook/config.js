@@ -11,6 +11,7 @@ function loadStories() {
   require('../src/components/elements/index.story.js');
   require('../src/components/account_page/index.story.js');
   require('../src/components/project_page/index.story.js');
+  require('../src/components/tools/index.story.js');
 }
 
 configure(loadStories, module);
