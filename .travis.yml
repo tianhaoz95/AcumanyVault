@@ -42,6 +42,7 @@ matrix:
         mkdir pushdoc
         cd ./AcumanyVault
         cp ./misc/docs/README.md ../pushdoc
+        cp -r ./misc/docs/design ../pushdoc/design
         cd ./ui/vault_desktop_web
         npm install
         npm test -- --coverage
