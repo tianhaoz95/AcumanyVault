@@ -1,6 +1,6 @@
 import firebaseCreateUser from './firebase/createUser'
 
-function createUser(providerName) {
+function createUser (providerName) {
   if (providerName === 'firebase') {
     firebaseCreateUser()
   } else {
