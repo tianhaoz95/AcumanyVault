@@ -60,6 +60,18 @@
           "REACT_APP_FB_APP_ID": "$FB_APP_ID"
         }
       }
+    },
+    {
+      "label": "Format desktop website code",
+      "command": "npm",
+      "args": [
+        "run",
+        "standard"
+      ],
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/ui/vault_desktop_web"
+      }
     }
   ]
 }
