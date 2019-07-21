@@ -1,9 +1,9 @@
 import firebaseCreateUser from './firebase/createUser'
 
-function createUser (providerName) {
+function createUser (providerName, username) {
   return new Promise((resolve, reject) => {
     if (providerName === 'firebase') {
-      firebaseCreateUser()
+      firebaseCreateUser(username)
         .then((res) => {
           resolve(res)
         })

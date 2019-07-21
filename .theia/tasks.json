@@ -57,7 +57,8 @@
           "REACT_APP_FB_PROJ_ID": "$FB_PROJ_ID",
           "REACT_APP_FB_BUCKET": "$FB_BUCKET",
           "REACT_APP_FB_MSG_ID": "$FB_MSG_ID",
-          "REACT_APP_FB_APP_ID": "$FB_APP_ID"
+          "REACT_APP_FB_APP_ID": "$FB_APP_ID",
+          "REACT_APP_RUNNING_MODE": "unittest"
         }
       }
     },
