@@ -71,6 +71,7 @@ function getFbConfig () {
       throw new Error('REACT_APP_FB_APP_ID not set')
     }
   }
+  console.log('Using Firebase config: ', fbConfig)
   return fbConfig
 }
 

@@ -26,7 +26,7 @@ function getEnvVar (envVarName) {
   }
   if (foundCnt > 1) {
     const errMsg = envVarName + ' found in more than 1 configuration, using unit test version'
-    throw errMsg
+    console.log(errMsg)
   }
   return envVarValue
 }
